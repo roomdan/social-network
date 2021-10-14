@@ -4,8 +4,86 @@
 .menu-inter {
     position: fixed;
     background:$darkBlue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     right:0px;
     width: 20rem;
     height: 100vh;
+    padding-top: 0.5rem;
+    border-left: solid 0.4rem $white;
+    box-shadow: 0px 15px 10px 12px rgba(0, 0, 0, 0.219) ;
     @include transition;
+    .user {
+        width: 90%;
+        min-height: 10%;
+        flex-direction: column;
+        border-radius: 100rem;
+        @include flexCenterAll;
+        .title {
+            margin: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        .profile-picture {
+            width: 30%;
+            box-sizing: border-box;
+            border-radius: 100rem;
+            border: white solid 0.2rem;
+            img {
+                width: 100%;
+                border-radius: 100rem;
+            }
+        }
+
+        input {
+            @include input;
+        }
+        
+    }
+    .email-verified {
+        width: 70%;
+        min-height: 3rem;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.37);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-items: center;
+        border-radius: 1rem;
+        margin-top: 1rem;
+        align-items: center;
+        .icon {
+            width: 2rem;
+            height: 2rem;
+            background: url(../../assets/icons/check.png);
+            background-position: center;
+            background-size: cover;
+            margin-left: 0.5rem;
+        }
+        .text {
+            width: 80%;
+            border-radius: 1rem;
+            height: 100%;
+            justify-items: center;
+            align-items: center;
+            display: flex;
+            margin-left: 0.5rem;
+            
+        }
+    }
+
+    .logOutBtn {
+        width: 30%;
+        height: 3rem;
+        margin-top: 1rem;
+        background-color: $blueLinks;
+        border-radius: 1rem;
+        color: white;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+    }
 }

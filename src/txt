@@ -1,0 +1,17 @@
+  //PERSISTENCIA DATOS
+  
+  // const [ state, setState] = useState(false)
+  // const dispatch = useDispatch()  
+  
+
+// import { firebase } from "./firebases-all/config-general/firebase.config"
+// import { useDispatch } from "react-redux";
+// import {GoogleGetUserData } from "./redux-global/action/Google.action"
+
+
+  // // useEffect(()=>{
+  // //  firebase.auth().onAuthStateChanged(e=>{
+  // //    if( e && e.uid){setState(e.uid) ; dispatch(GoogleGetUserData(e)) }
+  // //     else {setState(false)}
+  // //   });
+  // // },[dispatch])

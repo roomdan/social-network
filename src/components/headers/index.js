@@ -4,7 +4,7 @@ import Header from "./header"
 const FiexedLayout = ({children})=>{
 
     return <>
-    <Header/>
+    <Header />
     {children}
     <Footer/>
     </>

@@ -15,7 +15,7 @@ export const GitHubAuthProvider = ()=>{
     }
 }
 
-const GoogleGetUserData = payload => (
+export const GoogleGetUserData = payload => (
     {
         type:types.onGoogleSesion,
         payload:payload,
