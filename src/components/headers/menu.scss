@@ -1,0 +1,11 @@
+@import "../../_scss_styles/_COLORS.SCSS";
+@import "../../_scss_styles/_STYLES.SCSS";
+
+.menu-inter {
+    position: fixed;
+    background:$darkBlue;
+    right:0px;
+    width: 20rem;
+    height: 100vh;
+    @include transition;
+}

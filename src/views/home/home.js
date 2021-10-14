@@ -1,13 +1,11 @@
-import { useSelector } from "react-redux"
-import "./home.scss"
 
+import "./home.scss"
 const Home = ()=>{
 
-    const data = useSelector(e=>e);
-    console.log(data);
+
+
 
     return <div className='home-app'>
-
     </div>
 }
 

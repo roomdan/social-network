@@ -1,15 +1,23 @@
-import { GoogleProvider, firebase, GitHubProvider} from "../../firebases-all/config-general/firebase.config"
+import { GoogleProvider, firebase, GitHubProvider } from "../../firebases-all/config-general/firebase.config"
+import {types} from "../types/types"
 
 export const GoogleSesionAuth = ()=>{
-    return async ()=>{
+    return async (dispatch)=>{
         const response = await firebase.auth().signInWithPopup(GoogleProvider);
-        console.log(response);
+        dispatch(GoogleGetUserData(response))
 }
 }
 
 export const GitHubAuthProvider = ()=>{
-    return async ()=>{
+    return async (dispatch)=>{
         const response = await firebase.auth().signInWithCredential(GitHubProvider);
-        console.log(response);
+        dispatch(GoogleGetUserData(response))
     }
 }
+
+const GoogleGetUserData = payload => (
+    {
+        type:types.onGoogleSesion,
+        payload:payload,
+    }
+)

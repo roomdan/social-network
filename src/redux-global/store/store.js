@@ -1,4 +1,5 @@
 import thunk from "redux-thunk";
+import { isError } from "../reducers/errors.reducer";
 import { GoogleAuth } from "../reducers/Google.sesion.reducer";
 import { posts } from "../reducers/post.reducer";
 
@@ -9,6 +10,7 @@ const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOO
 const reducers = combineReducers({
     post:posts,
     GoogleUser:GoogleAuth,
+    Errors:isError
 })
 
 export const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)))
