@@ -1,0 +1,41 @@
+body {
+    background-color: #242830;
+    color: white;
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+input {
+    border: none;
+    outline: none;
+    margin: 0.5em;
+}
+
+ul {
+    list-style: none;
+
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+body::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px; 
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #f1304d;
+    border-radius: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #4b5d72;
+    width: 10px;
+}

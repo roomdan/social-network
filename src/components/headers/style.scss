@@ -1,0 +1,51 @@
+@import "../../_scss_styles/_COLORS.SCSS";
+@import "../../_scss_styles//_STYLES.SCSS";
+
+
+//header
+.header-app {
+    border-top: solid 0.3rem $ligthRead;
+    width: 100%;
+    min-height: 70px;
+    background-color: $darkBlue;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-shadow: -5px 4px 12px rgba(0, 0, 0, 0.397);
+    position: fixed;
+    top: 0;
+    .grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        .logo{
+            .hmg-menu {
+                width: 2rem;
+                color: white;
+                height: 2rem;
+                background: red;
+                background: url(../../assets/icons/menu.svg);
+                cursor: pointer;
+                background-size: cover;
+                margin-right:1rem ;
+            }
+            color: white;
+            font-size: 1.8rem;
+            @include transition;
+            @media screen and(max-width:720px) {
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+}
+
+//footer
+.footer {
+    border-top: solid 0.3rem $ligthRead;
+    width: 100%;
+    min-height: 70px;
+    background-color: $darkBlue;
+}

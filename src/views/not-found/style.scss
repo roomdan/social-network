@@ -1,0 +1,11 @@
+@import "../../_scss_styles/_COLORS.SCSS";
+@import "../../_scss_styles//_STYLES.SCSS";
+
+.not-found-page {
+    @include flexCenterAll;
+    flex-direction: column;
+    height: 50vh;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}

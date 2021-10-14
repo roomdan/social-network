@@ -1,0 +1,34 @@
+/* movil first @App */
+.continer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4b5d72;
+}
+
+.loader:nth-child(1n) {
+    width: 2rem;
+    height: 2rem;
+    background-color:transparent;
+    border-radius: 100%;
+    border: 7px solid #113CFC;
+    border-top: 7px solid #ffffff;
+    border-right: 7px solid #ffffff;
+    border-bottom: 7px solid #ffffff;
+    animation: loaderAnimation 1.2s linear infinite;
+    animation-timing-function: cubic-bezier(0.35, 0.6, 0.71, 1.18);
+}
+
+@keyframes loaderAnimation {
+    
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+    
+}
