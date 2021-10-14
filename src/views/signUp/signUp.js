@@ -33,7 +33,7 @@ const SignUp = ()=>{
                 <div className='external-logs'>
                     <button onClick={()=>{dispatch(GoogleSesionAuth())}} id='google'></button>
                     <button id='facebook'></button>
-                    <button onClick={()=>{dispatch(GitHubAuthProvider())}} id='gitHub'></button>
+                    <button onClick={()=>{}} id='gitHub'></button>
                 </div>
             </div>
         </div>
