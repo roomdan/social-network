@@ -30,7 +30,26 @@
             width: 30%;
             box-sizing: border-box;
             border-radius: 100rem;
-            border: white solid 0.2rem;
+            animation: border 15s infinite;
+            transition: all 0.3s linear;
+            transition-timing-function: cubic-bezier(0.29,-0.37, 0.65, 1.18);
+            @keyframes border {
+                0% {
+                    border: rgb(252, 255, 96) solid 0.2rem;
+                }
+                25% {
+                    border: $blueLinks solid 0.2rem;
+                }
+                50% {
+                    border: $ligthRead solid 0.2rem;
+                }
+                75% {
+                    border: $orange solid 0.2rem;
+                }
+                100% {
+                    border: rgb(252, 255, 96) solid 0.2rem;
+                }
+            }
             img {
                 width: 100%;
                 border-radius: 100rem;
@@ -76,7 +95,7 @@
     }
 
     .logOutBtn {
-        width: 30%;
+        width: 40%;
         height: 3rem;
         margin-top: 1rem;
         background-color: $blueLinks;
@@ -85,5 +104,8 @@
         font-size: 1rem;
         font-weight: 700;
         cursor: pointer;
+        @media screen and(max-width:720px) {
+            width: 70%;
+        }
     }
 }

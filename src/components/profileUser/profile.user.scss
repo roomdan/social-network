@@ -1,0 +1,47 @@
+@import "../../_scss_styles/_COLORS.SCSS";
+@import "../../_scss_styles/_STYLES.SCSS";
+
+.userInfo {
+    width: 85%;
+    min-height: 5rem;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    margin: 0.5rem;
+    .profile-pic {
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        padding-bottom: 0;
+        img {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 100rem;
+        }
+    }
+    .details-info{
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+    }
+    .aditional-info {
+        flex-direction: column;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        color: $ligthRead;
+        font-weight: 600;
+        p {
+            margin: 0.4rem;
+
+        }
+    }
+}

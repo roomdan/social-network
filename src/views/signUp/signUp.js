@@ -20,10 +20,13 @@ const SignUp = ()=>{
     const { register, handleSubmit} = useForm()
     const dispatch = useDispatch()
 
+
+
     return (
         <div className='gen-continer'>
             <div className='box-sign'>
                     <h2>login or register</h2>
+                    <div className='warning'>ATTENTION: ONLY LOGIN WITH GOOGLE</div>
                 <form className='log-in-form' onChange={handleSubmit(e=>setRegisters(e))}>
                     <input type='text' className='reg-in' {...register('email')} />
                     <input type={type(on)} className='reg-in' {...register('password')}/>

@@ -1,13 +1,13 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom"
 import  Loader from "./components/loader/loader";
-import Home from "./views/home/home";
 import {useSelector} from "react-redux"
 
 function App() {
 
   const SignUp = lazy(()=>import('./views/signUp/signUp'));
   const FiexedLayout = lazy(()=>import('./components/headers/index'))
+  const Home = lazy(()=>import('./views/home/home'))
   const {GoogleUser}= useSelector(e=>e);
 
   return (

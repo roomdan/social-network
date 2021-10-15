@@ -3,6 +3,7 @@ import { types } from "../types/types";
 
 const getDefault = {}
 
+
 export const posts = (state= getDefault, action )=>{
     switch(action.type) {
        case types.getPosts:

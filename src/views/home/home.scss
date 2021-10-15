@@ -3,6 +3,125 @@
 
 .home-app{
     width: 100%;
-    height: 100vh;
-    background-color:$darkGray;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    @media screen and(max-width:900px) {
+        margin-top: 5rem;
+        flex-direction: column;
+    }
+
+    .feed-posts {
+        padding-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        padding-left: 1rem;
+        width: calc(100vw/3);
+        height: 117vh;
+        background-color: rgba(0, 0, 0, 0.555);
+        overflow-x: hidden;
+        overflow-x: auto;
+        padding-bottom: 2rem;
+        &::-webkit-scrollbar {
+            background-color: transparent;
+            width: 8px;     /* Tamaño del scroll en vertical */
+            height: 8px; 
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background-color: $orange;
+            border-radius: 1rem;
+        }
+        
+        &::-webkit-scrollbar-track {
+            background-color: #4b5d72;
+            width: 10px;
+        }
+        @media screen and(max-width:900px) {
+            padding-top: 0rem;
+            width: 100%;
+            min-height: 30vh;
+        }
+        .feed-post-continer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            @include flexCenterAll;
+
+        }
+        .title-sect {
+            color: $white;
+            position:static;
+            font-size: 2rem;
+            margin: 0.5rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            label {
+                font-size: 0.8rem;
+                input {
+                    border-radius: 0.1rem;
+                    padding-left: 5px;
+                }
+            }
+        }
+
+        .view-more {
+            button {
+                background-color: $blueLinks;
+                margin-left: 0.5rem;
+                cursor: pointer;
+                border-radius: 1rem;
+                color: rgb(0, 0, 0);
+                font-weight: 600;
+            }
+        }
+    }
+    .continer-vw {
+        padding-top: 5rem;
+        padding-left: 1rem;
+        width: calc(100vw/3);
+        min-height: 117vh;
+        @media screen and(max-width:900px) {
+            padding-top: 0rem;
+            width: 100%;
+            min-height: 30vh;
+        }
+        .title-sect {
+            color: $white;
+            position:static;
+            font-size: 2rem;
+            margin: 0.5rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            button {
+                margin-right: 5rem;
+                padding: 0.5rem;
+                border-radius: 0.5rem;
+                background-color: $ligthRead;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+    .titles-section {
+        color: $white;
+        position:static;
+    }
+}
+
+///not comments results
+
+.not-comments-results {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -20,6 +20,16 @@
         @media screen and (max-width:720px) {
             width: 80%;
         }
+
+        .warning {
+            @include flexCenterAll;
+            background-color: $ligthRead;
+            padding: 0.5rem;
+            border-radius: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
         h2 {
             color:$white;
             font-size: 2rem;

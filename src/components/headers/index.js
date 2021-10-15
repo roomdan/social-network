@@ -5,7 +5,9 @@ const FiexedLayout = ({children})=>{
 
     return <>
     <Header />
-    {children}
+    <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+      {children}
+    </div>
     <Footer/>
     </>
 }
