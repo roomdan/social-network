@@ -14,9 +14,11 @@ import { saveUserInfo } from "../../redux-global/action/getUser.action";
 const Home = ()=>{
 
     const [posts, setPosts] = React.useState('')
+
+
     const [value, setValue] = React.useState('')
     const [results , setResults ] = React.useState(10);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const fastStyle ={width:'100%', minHeight:'20vh', display:'flex', justifyContent:'center', alignItems:'center'}
 
@@ -38,13 +40,20 @@ useEffect(()=>{
 },[results])
 
 const feedPoster = posts?posts.data.map(e=>{
-    if(e.tags.join('').includes(value)) {
+    if(e.tags.join('').toLowerCase().includes(value.toLowerCase())) {
         return <SocialCard
-        img={ e.owner.picture} other={e.image} userId={e.id} id={e.owner.id} name={e.owner.firstName + " " + e.owner.lastName } text={e.text} tags={e.tags} likes={e.likes} 
+        img={ e.owner.picture} other={e.image} userId={e.id} 
+        id={e.owner.id} name={e.owner.firstName + " " + e.owner.lastName }
+        text={e.text} tags={e.tags} likes={e.likes} 
        key={e.id} />
     }
     else {return false}
 }):<div style={fastStyle}><OnlyLoader/></div>
+
+const EmptyUserAndPost = ()=>{
+    dispatch(saveUserInfo(Object()));
+    dispatch(savePost(Object()))
+}
 
 //coments 
     const {commentId, postSaved, userInfo} = useSelector(e=>e);
@@ -52,11 +61,12 @@ const feedPoster = posts?posts.data.map(e=>{
     const allComments = commentId&& commentId.data.data?
     commentId.data.data.map(e=><Comment
          img={e.owner.picture} name={e.owner.firstName + " " + e.owner.lastName } comment={e.message} key={e.id}/>):
-         <div className='not-comments-results'>No hay comentarios para mostrar</div>;
+         <div className='not-comments-results'>Not comments results</div>;
 
     return <div className='home-app'>
         <div className='feed-posts'>
-            <div className='title-sect'>Feed  <label>Filter by tags<input onChange={(e)=>{setValue(e.target.value)}} placeholder='tags' /></label></div>
+            <div className='title-sect'>Feed  <label>Filter by tags<input 
+            onChange={(e)=>{setValue(e.target.value)}} placeholder='tags' /></label></div>
             <section className='feed-post-continer'>
     {           feedPoster}
         <div className='view-more'>
@@ -68,27 +78,25 @@ const feedPoster = posts?posts.data.map(e=>{
         <div className='continer-vw'>
             <div className='title-sect'>
                 User Profile
-                <button onClick={()=>{ dispatch(saveUserInfo(Object())); dispatch(savePost(Object()))}}>Clear User</button>
+                <button type='button' onClick={EmptyUserAndPost}>Empty User Inf</button>
             </div>
-            <div>
-                <div>
+            <div style={{width:'100%',display:'flex', justifyContent:'center', flexDirection:'column', alignItems:'center'}}>
                     { userInfo && userInfo.data? <ProfileUser 
                     name={userInfo.data.firstName} img={userInfo.data.picture} email={userInfo.data.email} 
-                    registerDate={userInfo.data.registerDate} location={userInfo.data.location.country} />:'Select a post user'}
-                  </div>
+                    registerDate={userInfo.data.registerDate} location={userInfo.data.location.country} />:''}
                {postSaved && postSaved.name ?  <SocialCard
                 name={postSaved.name} img={postSaved.img} 
-                text={postSaved.text} tags={postSaved.tags} likes={postSaved.likes} postImg={postSaved.other} /> :'Select <View More> for details' }
+                text={postSaved.text} tags={postSaved.tags} likes={postSaved.likes} postImg={postSaved.other} /> :'Select an user post.' }
             </div>
         </div>
         <div className='continer-vw'>
-        <div className='title-sect'>
-            Comments
-            <button onClick={()=>{dispatch(saveComment(String()))}}>Clear Comments</button>
-        </div>
-        <div className='feed-post-continer'>
-           {allComments}
-        </div>
+            <div className='title-sect'>
+                Comments
+                <button onClick={()=>{dispatch(saveComment(String()))}}>Empty Comments</button>
+            </div>
+            <div className='feed-post-continer'>
+                {allComments}
+            </div>
         </div>
     </div>
 }

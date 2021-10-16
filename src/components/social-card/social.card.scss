@@ -10,6 +10,9 @@
     background-color: rgb(255, 255, 255);
     border-radius: 1rem;
     margin: 0.5rem;
+    @media screen and(max-width:900px) {
+        width: 95%;
+    }
     .card-header {
         width: 100%;
         display: flex;
@@ -25,17 +28,20 @@
                 width: 100%;
                 height: 2rem;
                 border-radius: 100%;
+                margin: 0;
             }
 
         }
         h4 {
             text-transform: capitalize;
             color: $darkBlue;
+            margin: 0;
         }
         p{
             text-transform: capitalize;
             color: $gray;
             margin-left: 2rem;
+            margin: 0;
         }
     }
     .content-posters {
@@ -57,15 +63,21 @@
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-start;
-                align-items:center;
                 text-transform: capitalize;
                 flex-wrap: wrap;
                 .post-image-reaction {
-                    width: 14rem;
+                    width: 100%;
+                    padding-top: 0.5rem;
+                    padding-bottom: 0.5rem;
+                    display: flex;
+                    justify-content: center;
                     margin: 0.5rem;
+                    background-color: rgba(0, 0, 0, 0.103);
+                    border-radius: 1rem;
                     img {
-                        width: 100%;
+                        width: 14rem;
+                        border-radius: 0.5rem;
+                        max-height: 14rem;
                     }
                 }
             }
@@ -101,6 +113,7 @@
             align-items: center;
             p{
                 color: $orange;
+                margin-bottom: 0.5rem;
             }
             color: $ligthRead;
         }

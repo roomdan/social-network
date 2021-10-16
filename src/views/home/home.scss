@@ -8,6 +8,7 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
+    @include transition;
     @media screen and(max-width:900px) {
         margin-top: 5rem;
         flex-direction: column;
@@ -15,6 +16,8 @@
 
     .feed-posts {
         padding-top: 5rem;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
         display: flex;
         flex-direction: column;
         padding-left: 1rem;
@@ -24,6 +27,7 @@
         overflow-x: hidden;
         overflow-x: auto;
         padding-bottom: 2rem;
+        @include transition;
         &::-webkit-scrollbar {
             background-color: transparent;
             width: 8px;     /* Tamaño del scroll en vertical */
@@ -43,12 +47,14 @@
             padding-top: 0rem;
             width: 100%;
             min-height: 30vh;
+            @include transition;
         }
         .feed-post-continer {
             width: 100%;
             display: flex;
             flex-direction: column;
             @include flexCenterAll;
+            @include transition;
 
         }
         .title-sect {
@@ -61,6 +67,7 @@
             justify-content: space-between;
             flex-direction: row;
             align-items: center;
+            @include transition;
             label {
                 font-size: 0.8rem;
                 input {
@@ -83,11 +90,15 @@
     }
     .continer-vw {
         padding-top: 5rem;
-        padding-left: 1rem;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
         width: calc(100vw/3);
         min-height: 117vh;
+        @include transition;
         @media screen and(max-width:900px) {
-            padding-top: 0rem;
+            padding-top: 1rem;
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
             width: 100%;
             min-height: 30vh;
         }

@@ -30,7 +30,7 @@ const Header = ()=>{
             <div className='logo'>
                 <button onClick={()=>{menue()}} className='hmg-menu'></button>
                 <Link to='/home'>
-                        Welcome{' name'}
+                        Welcome{ GoogleUser && GoogleUser.additionalUserInfo.profile?" "+GoogleUser.additionalUserInfo.profile.given_name:'nada'}
                 </Link>
             </div>
             <div className='info'>

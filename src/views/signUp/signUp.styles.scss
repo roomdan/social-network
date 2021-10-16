@@ -18,7 +18,7 @@
         @include flexCenterAll;
         @include transition;
         @media screen and (max-width:720px) {
-            width: 80%;
+            width: 92%;
         }
 
         .warning {
@@ -28,12 +28,24 @@
             border-radius: 1rem;
             font-size: 1rem;
             font-weight: 600;
+            text-align: center;
+            @include transition;
+            @media screen and(max-width:900px) {
+                font-size: 0.8rem;
+                padding: 0.4rem;
+                text-align: center;
+            }
         }
 
         h2 {
             color:$white;
             font-size: 2rem;
             text-transform: uppercase;
+            @include transition;
+            @media screen and(max-width:900px) {
+                font-size: 1.5rem;
+                text-align: center;
+            }
         }
         .log-in-form {
             width: 70%;

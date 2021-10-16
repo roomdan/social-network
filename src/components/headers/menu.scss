@@ -28,6 +28,9 @@
         }
         .profile-picture {
             width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             box-sizing: border-box;
             border-radius: 100rem;
             animation: border 15s infinite;
@@ -55,7 +58,6 @@
                 border-radius: 100rem;
             }
         }
-
         input {
             @include input;
         }

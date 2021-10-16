@@ -10,6 +10,9 @@
     background-color: rgb(255, 255, 255);
     border-radius: 1rem;
     margin: 0.5rem;
+    @media screen and(max-width:900px) {
+        width: 95%;
+    }
     .profile-pic {
         width: 100%;
         box-sizing: border-box;

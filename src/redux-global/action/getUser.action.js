@@ -1,7 +1,6 @@
 import axios from "axios"
 import { types } from "../types/types";
 
-
 export const getFullUserInfo = (id)=>{
     return async (dispatch)=>{
         const pet = await axios(`https://dummyapi.io/data/v1/user/${id}`, {headers:{
