@@ -28,20 +28,18 @@ const SignUp = ()=>{
                     <h2>login or register</h2>
                     <div className='warning'>ATTENTION: ONLY LOGIN WITH GOOGLE</div>
                 <form className='log-in-form' onChange={handleSubmit(e=>setRegisters(e))}>
-                    <input type='text' className='reg-in' {...register('email')} />
-                    <input type={type(on)} className='reg-in' {...register('password')}/>
+                    <input disabled type='text' className='reg-in' {...register('email')} />
+                    <input disabled type={type(on)} className='reg-in' {...register('password')}/>
                 </form>
                 <div className='sbmt-btn'>
                     <label>
-                        <input onInput={checked} type='checkbox'/>
+                        <input disabled onInput={checked} type='checkbox'/>
                         View password
                     </label>
                     <button onClick={()=>{dispatch(LogWhitMailandPassword(registers.email, registers.password))}} className='submit-btn'>log in</button>
                 </div>
                 <div className='external-logs'>
                     <button onClick={()=>{dispatch(GoogleSesionAuth())}} id='google'></button>
-                    <button id='facebook'></button>
-                    <button onClick={()=>{}} id='gitHub'></button>
                 </div>
             </div>
         </div>
