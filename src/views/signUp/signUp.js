@@ -26,7 +26,7 @@ const SignUp = ()=>{
         <div className='gen-continer'>
             <div className='box-sign'>
                     <h2>Inicie Sesion Con Google</h2>
-                    <div className='warning'>ATTENTION: ONLY LOGIN WITH GOOGLE</div>
+                    <div style={{display:'none'}} className='warning'>ATTENTION: ONLY LOGIN WITH GOOGLE</div>
                 <form style={{display:'none'}} className='log-in-form' onChange={handleSubmit(e=>setRegisters(e))}>
                     <input disabled type='text' className='reg-in' {...register('email')} />
                     <input disabled type={type(on)} className='reg-in' {...register('password')}/>
